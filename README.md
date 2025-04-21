@@ -36,10 +36,12 @@ De esta forma, en la aplicacion lo que se hace es configurar el broker MQTT de p
 
 Para probar o simular la publicacion de datos de MQTT se puede instalar Mosquitto (https://mosquitto-org.translate.goog/download/?_x_tr_sl=en&_x_tr_tl=es&_x_tr_hl=es&_x_tr_pto=rq) y usar los siguientes comandos:
 
-- Para publicar en un tema:
-> mosquitto_pub -h localhost -t "/edificio/1/habitacion/1/temperatura″ -m "22.3"
+- Para publicar en un tema (usando broker local o broker de prueba test.mosquitto.org):
+> mosquitto_pub -h localhost -t "habitacion/34/temperatura″ -m "22.3"
+> mosquitto_sub -h test.mosquitto.org -t "habitacion/34/temperatura″
 
 - Para subscribirse a un teman:
+> mosquitto_sub -h localhost -t "habitacion/34/temperatura″
 > mosquitto_sub -h test.mosquitto.org -t "habitacion/34/temperatura″
 
 En el application.properties se pueden activar los logs de DEBUG para la parte de MQTT.
