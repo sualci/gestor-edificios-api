@@ -38,10 +38,12 @@ Para probar o simular la publicacion de datos de MQTT se puede instalar Mosquitt
 
 - Para publicar en un tema (usando broker local o broker de prueba test.mosquitto.org):
 > mosquitto_pub -h localhost -t "habitacion/34/temperatura″ -m "22.3"
+
 > mosquitto_sub -h test.mosquitto.org -t "habitacion/34/temperatura″
 
-- Para subscribirse a un teman:
+- Para subscribirse a un tema:
 > mosquitto_sub -h localhost -t "habitacion/34/temperatura″
+
 > mosquitto_sub -h test.mosquitto.org -t "habitacion/34/temperatura″
 
 En el application.properties se pueden activar los logs de DEBUG para la parte de MQTT.
